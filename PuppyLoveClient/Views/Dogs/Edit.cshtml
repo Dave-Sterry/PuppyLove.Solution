@@ -1,0 +1,21 @@
+<h1>Edit Info:</h1>
+
+<form action="/Dogs/Details/@(Model.DogId)" method="post">
+  <label for="name">Dog's Name</label>
+  <input id="name" name="name" type="text" value="@(Model.Name)">
+  <label for="mood">Mood</label>
+  <input id="mood" name="mood" type="text" value="@(Model.Mood)">
+  <label for="age">Age</label>
+  <input id="age" name="age" type="text" value="@(Model.Age)"> 
+  <label for="size">Size</label>
+  <input id="size" name="size" type="text" value="@(Model.Size)">
+  <label for="location">Location</label>
+  <input id="location" name="location" type="text" value="@(Model.Location)">
+  <label for="imgUrl">Profile Pic</label>
+  <input id="imgUrl" name="imgUrl" type="text" value="@(Model.ImgUrl)">
+
+
+  <button type="submit">Go</button>
+</form>
+
+<a href="/Dogs/Details/@(Model.DogId)"><p>Return to Doggy Details</p></a>
