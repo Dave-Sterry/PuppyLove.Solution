@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using PuppyLove.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace PuppyLove.Controllers
 {
@@ -10,7 +11,7 @@ namespace PuppyLove.Controllers
     [ApiController]
     public class DogsController: ControllerBase
     {
-        private AnimalShelterContext _db;
+        private PuppyLoveContext _db;
         
         public DogsController(PuppyLoveContext db)
         {
@@ -37,7 +38,7 @@ namespace PuppyLove.Controllers
                 query = query.Where(entry => entry.Mood == mood);
             }
 
-            if ( age != null)
+            if ( age != 0)
             {
                 query = query.Where(entry => entry.Age == age);
             }
@@ -56,6 +57,8 @@ namespace PuppyLove.Controllers
             {
                 query = query.Where(entry => entry.Location == location);
             }
+            
+            return query.ToList();
         }
 
         [HttpPost]
