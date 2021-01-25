@@ -12,7 +12,7 @@ namespace PuppyLoveClient.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(); // return RedirectToAction("Index", "Dogs"); assuming we want to View the splash page here
         }
 
         public IActionResult Privacy()
