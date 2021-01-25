@@ -10,10 +10,16 @@ namespace PuppyLoveClient.Controllers
 {
   public class DogsController : Controller
   {
-    public IActionResult Index()
+    // public IActionResult Index()
+    // {
+    //   var allDogs = Dog.GetDogs();
+    //   return View(allDogs);
+    // }
+
+    public IActionResult Index(int id)
     {
-      var allDogs = Dog.GetDogs();
-      return View(allDogs);
+      var randomDog = Dog.GetRandom(id);
+      return View(randomDog);
     }
 
     [HttpPost]

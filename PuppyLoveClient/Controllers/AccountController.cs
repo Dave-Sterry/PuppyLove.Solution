@@ -6,7 +6,7 @@ using PuppyLoveClient.ViewModels;
 using System.Linq;
 using System.Security.Claims;
 
-namespace PuppyLoveClient.Controllers // maybe PuppyLove (not PuppyLoveClient to access Db??)
+namespace PuppyLoveClient.Controllers
 {
   public class AccountController : Controller
   {

@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PuppyLoveClient.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace PuppyLoveClient
 {
@@ -42,12 +45,12 @@ namespace PuppyLoveClient
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
-                options.Password.RequiredLength = 0; // 0 will actually return null and value cannot be null
+                options.Password.RequiredLength = 0;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredUniqueChars = 0;
-            }); // this overrides the default User Password requirements. can now make a 1 character password
+            });
             }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
