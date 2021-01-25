@@ -27,5 +27,33 @@ namespace PuppyLoveClient.Models
 
             return dogList;
         }
+
+        public static Dog GetDetails(int id)
+        {
+            var apiCallTask = ApiHelper.Get(id);
+            var result = apiCallTask.Result;
+
+            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+            Dog dog = JsonConvert.DeserializeObject<Dog>(jsonResponse.ToString());
+
+            return dog;
+        }
+
+        public static void Post(Dog dog)
+        {
+            string jsonDog = JsonConvert.SerializeObject(dog);
+            var apiCallTask = ApiHelper.Post(jsonDog);
+        }
+
+        public static void Put(Dog dog)
+        {
+            string jsonDog = JsonConvert.SerializeObject(dog);
+            var apiCallTask = ApiHelper.Put(dog.DogId, jsonDog);
+        }
+
+        public static void Delete(int id)
+        {
+            var apiCallTask = ApiHelper.Delete(id);
+        }
     }
 }
