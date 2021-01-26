@@ -10,6 +10,7 @@ namespace PuppyLoveClient.Models
         public int DogId { get; set; }
         public string Name { get; set; }
         public string OwnerName { get; set; }
+        //public virtual ApplicationUser User { get; set; } -- need in API side as well?
         public string Mood { get; set; }
         public int Age { get; set; }
         public string Breed { get; set; }
