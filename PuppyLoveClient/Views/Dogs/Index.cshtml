@@ -9,8 +9,8 @@
             <h3>@Model.Name, Age: @Model.Age</h3>
         </div>
         <div class="row-swipe">
-            <button type="button" class="squirrel">@Html.ActionLink("Squirrel", "Index")</button>
-            <button type="button" class="sniff">@Html.ActionLink("Sniff", "Details", new { id = Model.DogId})</button>
+            <button type="button" class="squirrel"><span class="squirrel">@Html.ActionLink("Squirrel", "Index")</span></button>
+            <button type="button" class="sniff"><span class="sniff">@Html.ActionLink("Sniff", "Details", new { id = Model.DogId})</span></button>
         </div>
         <div class="row-bio">
             <p class="bio">@Model.Mood</p>

@@ -15,6 +15,11 @@ namespace PuppyLoveClient.Models
 
         public static async Task<string> Random()
         {
+            // if (currentUser)
+            // {
+            //     userIdParam = "userId=" + currentUser.Id;
+            // }
+            // {userIdParam}
             RestClient client = new RestClient("http://localhost:5000/api");
             RestRequest request = new RestRequest($"dogs/random", Method.GET);
             var response = await client.ExecuteTaskAsync(request);
@@ -56,3 +61,5 @@ namespace PuppyLoveClient.Models
         }
     }
 }
+
+// Do we need a 'Join' route in this file to create realtionships?

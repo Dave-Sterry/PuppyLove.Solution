@@ -57,6 +57,11 @@ namespace PuppyLove.Controllers
             {
                 query = query.Where(entry => entry.Location == location);
             }
+
+            if ( userId != null)
+            {
+                query = query.Where(entry => entry.userId == userId);
+            }
             
             return query.ToList();
         }

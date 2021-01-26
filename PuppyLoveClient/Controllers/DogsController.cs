@@ -25,6 +25,8 @@ namespace PuppyLoveClient.Controllers
     [HttpPost]
     public IActionResult Index(Dog dog)
     {
+
+      // dog.UserId = currentUser.Id;
       Dog.Post(dog);
       return RedirectToAction("Index");
     }
@@ -37,15 +39,22 @@ namespace PuppyLoveClient.Controllers
 
     public IActionResult Edit(int id)
     {
+      
       var dog = Dog.GetDetails(id);
       return View(dog);
     }
 
     [HttpPost]
-    public IActionResult Details(int id, Dog dog)
+    public IActionResult Edit(int id, Dog dog)
     {
+
+      // currentUser = asdfasdf
+      // if dog.userId == currentUser.Id
       dog.DogId = id;
       Dog.Put(dog);
+
+      // else
+      // return failed to execute
       return RedirectToAction("Details", id);
     }
 

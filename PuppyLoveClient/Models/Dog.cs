@@ -10,7 +10,7 @@ namespace PuppyLoveClient.Models
         public int DogId { get; set; }
         public string Name { get; set; }
         public string OwnerName { get; set; }
-        //public virtual ApplicationUser User { get; set; } -- need in API side as well?
+        public virtual ApplicationUser User { get; set; }
         public string Mood { get; set; }
         public int Age { get; set; }
         public string Breed { get; set; }
@@ -40,7 +40,7 @@ namespace PuppyLoveClient.Models
             return dog;
         }
 
-        public static Dog GetDetails(int id)
+        public static Dog GetDetails(int id) // add int userId
         {
             var apiCallTask = ApiHelper.Get(id);
             var result = apiCallTask.Result;

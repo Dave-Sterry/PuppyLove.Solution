@@ -1,5 +1,7 @@
 <h1>Edit Info:</h1>
 
+<!-- need hidden CurrentUser.id -->
+
 <form action="/Dogs/Details/@(Model.DogId)" method="post">
   <label for="name">Dog's Name</label>
   <input id="name" name="name" type="text" value="@(Model.Name)">
