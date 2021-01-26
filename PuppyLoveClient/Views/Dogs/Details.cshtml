@@ -1,24 +1,23 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h1>Dog Info:</h1>
-    <a>@Model.ImgUrl</a>
-<ul>
-    <li>Name: @Model.Name</li>
-    <li>Owner Name: @Model.OwnerName</li>
-    <li>Mood: @Model.Mood</li>
-    <li>Age: @Model.Age</li>
-    <li>Breed: @Model.Breed</li>
-    <li>Size: @Model.Size</li>
-    <li>Location: @Model.Location</li>
-
-</ul>
-<br>
-
-<a href="/Dogs/Edit/@(Model.DogId)"><p>Edit</p></a>
-<br>
-
-<a href="/Dogs"><p>Dog List</p></a>
-
-<a href="/Dogs/Delete/@(Model.DogId)"><p>DELETE DOG</p></a>
+<div class="container">
+    <h1>@Model.Name</h1>
+    <img src = "@Url.Content(Model.ImgUrl)" style="height:200px;width:auto;" alt="Dog pic" />
+    <div class="row">
+        <p>Age: @Model.Age Breed: @Model.Breed</p>
+    </div>
+    <p>Mood: @Model.Mood</p>
+    <p>Size: @Model.Size</p>
+    <div class="row">
+        <p>Owner: @Model.OwnerName, Location: @Model.Location</p>
+    </div>
+    <br>
+    @if (User.Identity.IsAuthenticated)
+    {
+    <a href="/Dogs/Edit/@(Model.DogId)"><p>Edit</p></a>
+    <a href="/Dogs/Delete/@(Model.DogId)"><p>DELETE DOG</p></a>
+    }
+    <br>
+    <a href="/Dogs"><p>Dog List</p></a>
+</div>

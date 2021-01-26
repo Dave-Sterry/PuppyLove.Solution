@@ -2,25 +2,18 @@
 
 <div class="container">
     <div class="col-lg-12">
-        @* @if(@Model.Count == 0)
-        {
-            <h3>Woof luck, looks like theres no new tails in your area.</h3>
-        }
-        else
-        { *@
-            <div class="profilePic">
-                <img src = "@Url.Content(Model.ImgUrl)" style="height:200px;width:auto;"/>
-            </div>
-            <div class="row-intro">
-                <h3>@Model.Name, Age: @Model.Age</h3>
-            </div>
-            <div class="row-swipe">
-                <button type="button" class="squirrel">Squirrel</button>
-                <button type="button" class="sniff">Sniff</button>
-            </div>
-            <div class="row-bio">
-                <p class="bio">@Model.Mood</p>
-            </div>
-        @* } *@
+        <div class="profilePic">
+            <img src = "@Url.Content(Model.ImgUrl)" style="height:200px;width:auto;" alt="Dog pic" />
+        </div>
+        <div class="row-intro">
+            <h3>@Model.Name, Age: @Model.Age</h3>
+        </div>
+        <div class="row-swipe">
+            <button type="button" class="squirrel">@Html.ActionLink("Squirrel", "Index")</button>
+            <button type="button" class="sniff">@Html.ActionLink("Sniff", "Details", new { id = Model.DogId})</button>
+        </div>
+        <div class="row-bio">
+            <p class="bio">@Model.Mood</p>
+        </div>
     </div>
 </div>
