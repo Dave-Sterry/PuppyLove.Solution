@@ -14,7 +14,6 @@ namespace PuppyLove.Models
         {
             builder.Entity<Dog>()
                 .HasData(
-                    //new Dog { DogId = , Name = "", OwnerName = "", Mood = "", Age = , Breed = "", Size = "", Location = "", ImgUrl = ""},
                     new Dog { DogId = 1, Name = "Helo", OwnerName = "Dave", Mood = "Upbeat and calm", Age = 8, Breed = "Mixed", Size = "Medium", Location = "Portland, OR", ImgUrl = "https://drive.google.com/file/d/12-NJjKT1mrCuA1lDzVCF9-1nec04oydw/view?usp=sharing"},
                     new Dog { DogId = 2 , Name = "Bartleby", OwnerName = "Sage", Mood = "Snarky", Age = 2 , Breed = "Mixed", Size = "Small", Location = "Portland, OR", ImgUrl = "https://photos.app.goo.gl/3sn4vdSiKDbLutba8"},
                     new Dog { DogId =3 , Name = "Fin", OwnerName = "Jerrod", Mood = "Inquisitive, playful", Age = 1 , Breed = "Husky", Size = "Small", Location = "Portland, OR", ImgUrl = "https://share.icloud.com/photos/0mxrEdflh8fSsVDXz6QaL5X-A#Oak_Hills"},

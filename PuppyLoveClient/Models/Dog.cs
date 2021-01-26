@@ -28,9 +28,9 @@ namespace PuppyLoveClient.Models
         //     return dogList;
         // }
 
-        public static Dog GetRandom(int id)
+        public static Dog GetRandom()
         {
-            var apiCallTask = ApiHelper.Random(id);
+            var apiCallTask = ApiHelper.Random();
             var result = apiCallTask.Result;
 
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);

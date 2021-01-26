@@ -34,23 +34,23 @@ namespace PuppyLoveClient
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddEntityFrameworkMySql()
-                .AddDbContext<PuppyLoveContext>(options => options
-                .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+            // services.AddEntityFrameworkMySql()
+            //     .AddDbContext<PuppyLoveContext>(options => options
+            //     .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                        .AddEntityFrameworkStores<PuppyLoveContext>()
-                        .AddDefaultTokenProviders();
+            // services.AddIdentity<ApplicationUser, IdentityRole>()
+            //             .AddEntityFrameworkStores<PuppyLoveContext>()
+            //             .AddDefaultTokenProviders();
 
-            services.Configure<IdentityOptions>(options =>
-            {
-                options.Password.RequireDigit = false;
-                options.Password.RequiredLength = 0;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequiredUniqueChars = 0;
-            });
+            // services.Configure<IdentityOptions>(options =>
+            // {
+            //     options.Password.RequireDigit = false;
+            //     options.Password.RequiredLength = 0;
+            //     options.Password.RequireLowercase = false;
+            //     options.Password.RequireNonAlphanumeric = false;
+            //     options.Password.RequireUppercase = false;
+            //     options.Password.RequiredUniqueChars = 0;
+            // });
             }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -78,5 +78,3 @@ namespace PuppyLoveClient
         }
     }
 }
-
-// lines 34 - 51 for Identity config 

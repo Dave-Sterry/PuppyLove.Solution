@@ -16,9 +16,9 @@ namespace PuppyLoveClient.Controllers
     //   return View(allDogs);
     // }
 
-    public IActionResult Index(int id)
+    public IActionResult Index()
     {
-      var randomDog = Dog.GetRandom(id);
+      var randomDog = Dog.GetRandom();
       return View(randomDog);
     }
 

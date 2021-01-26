@@ -13,10 +13,10 @@ namespace PuppyLoveClient.Models
         //     return response.Content;
         // }
 
-        public static async Task<string> Random(int id)
+        public static async Task<string> Random()
         {
             RestClient client = new RestClient("http://localhost:5000/api");
-            RestRequest request = new RestRequest($"dogs/{id}", Method.GET);
+            RestRequest request = new RestRequest($"dogs/random", Method.GET);
             var response = await client.ExecuteTaskAsync(request);
             return response.Content;
         }
@@ -50,7 +50,7 @@ namespace PuppyLoveClient.Models
         public static async Task Delete(int id)
         {
             RestClient client = new RestClient("http://localhost:5000/api");
-            RestRequest request = new RestRequest($"dog/{id}", Method.DELETE);
+            RestRequest request = new RestRequest($"dogs/{id}", Method.DELETE);
             request.AddHeader("Content-Type", "application/json");
             var response = await client.ExecuteTaskAsync(request);
         }
