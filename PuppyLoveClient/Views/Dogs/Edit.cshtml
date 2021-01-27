@@ -8,7 +8,6 @@
 <h1>Edit Info:</h1>
 
 <form action="/Dogs/Details/@(Model.DogId)" method="post">
-  @Html.HiddenFor(ApplicationUser => applicationUser.Id)
   <label for="name">Dog's Name</label>
   <input id="name" name="name" type="text" value="@(Model.Name)">
   <label for="mood">Mood</label>

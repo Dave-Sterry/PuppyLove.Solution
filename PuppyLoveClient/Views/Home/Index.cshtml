@@ -8,7 +8,7 @@
 <div class="container">
     @if (User.Identity.IsAuthenticated)
     {
-        <p>@Html.ActionLink("Doggos!", "Index", "Dogs")</p>
+        <p class="explore">@Html.ActionLink("Doggos!", "Index", "Dogs")</p>
     }
     else
     {

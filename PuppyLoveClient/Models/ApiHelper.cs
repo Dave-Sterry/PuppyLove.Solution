@@ -36,7 +36,7 @@ namespace PuppyLoveClient.Models
 
         public static async Task Post(string newDog)
         {
-            RestClient client = new RestClient("http:localhost:5000/api");
+            RestClient client = new RestClient("http://localhost:5000/api");
             RestRequest request = new RestRequest($"dogs", Method.POST);
             request.AddHeader("Content-Type", "application/json");
             request.AddJsonBody(newDog);

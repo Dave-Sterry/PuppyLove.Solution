@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PuppyLoveClient.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace PuppyLoveClient.Controllers
 {
@@ -16,19 +19,31 @@ namespace PuppyLoveClient.Controllers
     //   return View(allDogs);
     // }
 
+    private readonly PuppyLoveClientContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
+    public DogsController(UserManager<ApplicationUser> userManager, PuppyLoveClientContext db)
+    {
+      _userManager = userManager;
+      _db = db;
+    }
+
     public IActionResult Index()
     {
       var randomDog = Dog.GetRandom();
       return View(randomDog);
     }
 
-    [HttpPost]
-    public async Task<ActionResult> Create(Dog dog, str User )
+    public IActionResult Create()
     {
+      return View();
+    }
 
+    [HttpPost]
+    public IActionResult Create(Dog dog) // user id
+    {
       // var dog.User = this.User.FindFirst(ClaimTypes.NameIdentifier)?.currentUser.Id;
       Dog.Post(dog);
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
 
     public IActionResult Details(int id)

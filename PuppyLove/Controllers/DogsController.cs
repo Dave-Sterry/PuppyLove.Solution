@@ -19,7 +19,7 @@ namespace PuppyLove.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Dog>> Get(string name, string ownername, string mood, int age, string breed, string size, string location)
+        public ActionResult<IEnumerable<Dog>> Get(string name, string ownername, string mood, int age, string breed, string size, string location, string user)
         {
             var query = _db.Dogs.AsQueryable();
 
@@ -58,9 +58,9 @@ namespace PuppyLove.Controllers
                 query = query.Where(entry => entry.Location == location);
             }
 
-            if ( userId != null)
+            if ( user != null)
             {
-                query = query.Where(entry => entry.userId == userId);
+                query = query.Where(entry => entry.User == user);
             }
             
             return query.ToList();
