@@ -23,10 +23,10 @@ namespace PuppyLoveClient.Controllers
     }
 
     [HttpPost]
-    public IActionResult Index(Dog dog)
+    public async Task<ActionResult> Create(Dog dog, str User )
     {
 
-      // dog.UserId = currentUser.Id;
+      // var dog.User = this.User.FindFirst(ClaimTypes.NameIdentifier)?.currentUser.Id;
       Dog.Post(dog);
       return RedirectToAction("Index");
     }

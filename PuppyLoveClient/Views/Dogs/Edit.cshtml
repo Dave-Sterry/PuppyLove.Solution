@@ -1,8 +1,14 @@
+@{
+    ViewData["Title"] = "Details";
+}
+
+@using PuppyLoveClient.Models
+@model PuppyLoveClient.Models.Dog
+
 <h1>Edit Info:</h1>
 
-<!-- need hidden CurrentUser.id -->
-
 <form action="/Dogs/Details/@(Model.DogId)" method="post">
+  @Html.HiddenFor(ApplicationUser => applicationUser.Id)
   <label for="name">Dog's Name</label>
   <input id="name" name="name" type="text" value="@(Model.Name)">
   <label for="mood">Mood</label>

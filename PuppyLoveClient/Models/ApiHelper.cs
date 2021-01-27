@@ -61,5 +61,3 @@ namespace PuppyLoveClient.Models
         }
     }
 }
-
-// Do we need a 'Join' route in this file to create realtionships?

@@ -9,7 +9,7 @@ namespace PuppyLove.Models
         public string Name { get; set; }
         [Required]
         public string OwnerName { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        public string User { get; set; }
         [Required]
         public string Mood { get; set; }
         public int Age { get; set; }
