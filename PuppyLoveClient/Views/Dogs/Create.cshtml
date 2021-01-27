@@ -7,7 +7,7 @@
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(ApplicationUser => applicationUser.Id)
+    @Html.HiddenFor(applicationUser => applicationUser.User)
 
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
@@ -15,7 +15,7 @@
     @Html.LabelFor(model => model.OwnerName)
     @Html.TextBoxFor(model => model.OwnerName)
     <br>
-    @Html.HiddenFor(model => model.User == applicationUser.Id)
+    @Html.HiddenFor(model => model.User == ApplicationUser.Id)
     <br>
     @Html.LabelFor(model => model.Mood)
     @Html.TextBoxFor(model => model.Mood)
