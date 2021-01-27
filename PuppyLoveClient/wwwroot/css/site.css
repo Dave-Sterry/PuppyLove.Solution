@@ -43,7 +43,6 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
   margin-bottom: 60px;
   background-image: url("../images/park_2.jpg");
   background-repeat: no-repeat;
@@ -56,9 +55,8 @@ body {
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  /* Set the fixed height of the footer here */
   height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 60px;
 }
 
 .jumbotron {
@@ -97,83 +95,9 @@ p.explore {
   text-align: center;
   border-radius: 20%;
 }
-  /* @mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
-    box-shadow: inset 0 0 0 $width $color;
-    color: $color;
-    transition: color $duration $duration/3;
-    position: relative;
-    
-    &::before,
-    &::after {
-      border: 0 solid transparent;
-      box-sizing: border-box;
-      content: '';
-      pointer-events: none;
-      position: absolute;
-      width: 0; height: 0;
-      
-      #{$vertical}: 0; 
-      #{$horizontal}: 0;
-    }
-  
-    &::before {
-      $h-side: if($horizontal == 'left', 'right', 'left');
-      
-      border-#{$vertical}-width: $width;
-      border-#{$h-side}-width: $width;
-    }
-    
-    &::after {
-      $v-side: if($vertical == 'top', 'bottom', 'top');
-      
-      border-#{$v-side}-width: $width;
-      border-#{$horizontal}-width: $width;
-    }
-    
-    &:hover {
-      color: $hover;
-      
-      &::before,
-      &::after {
-        border-color: $hover;
-        transition: border-color 0s, width $duration, height $duration;
-        width: 100%;
-        height: 100%;
-      }
-      
-      &::before { transition-delay: 0s, 0s, $duration; }
-      
-      &::after { transition-delay: 0s, $duration, 0s; }
-    }
-  }
-  
-  .draw-border {
-    @include btn-border-drawing(#58afd1, #ffe593, 4px, bottom, right);
-  }
-  
-  //=== Button styling, semi-ignore
-  .btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    line-height: 1.5;
-    font: 700 1.2rem 'Roboto Slab', sans-serif;
-    padding: 1em 2em;
-    letter-spacing: 0.05rem;
-    
-    &:focus { outline: 2px dotted #55d7dc; }
-  }
-  
-  //=== Pen styling, ignore
-  body { 
-    background: #1f1a25;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  } */
 
-/* sniff button */
+/* sniff button 
+------------------------------------------------------*/
 button.sniff {
   border-radius: 4px;
   background-color: #E2E890;
@@ -217,7 +141,8 @@ button.sniff:hover span.sniff:after {
   right: 0;
 }
 
-/* squirrel button */
+/* squirrel button 
+-----------------------------------------------------*/
 button.squirrel {
   border-radius: 4px;
   background-color: #E2E890;
@@ -257,6 +182,94 @@ button.squirrel:hover span.squirrel {
 }
 
 button.squirrel:hover span.squirrel:before {
+  opacity: 1;
+  left: 0;
+}
+
+/* profile display 
+-----------------------------------------------------------*/
+
+img.profilePic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: auto;
+  border-radius: 5px 5px 5px 5px;
+}
+
+div.card {
+  background-color: rgba(255, 255, 255, 0.0);
+  border: none;
+}
+
+.container-lower {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.container-lower p {
+  text-align: center;
+}
+
+.container-lower h1 {
+  text-align: center;
+}
+
+input#no {
+  float: right;
+  margin-left: auto;
+}
+
+input#yes {
+  float: left;
+  margin-right: auto;
+}
+
+/* add button
+-------------------------------------- */
+input.squirrel {
+  border-radius: 4px;
+  background-color: #E2E890;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+input#yes:hover {
+  background-color: red;
+}
+
+input#yes  {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+input#yes :before {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+input#yes:hover  {
+  padding-left: 25px;
+}
+
+input#yes:hover :before {
   opacity: 1;
   left: 0;
 }

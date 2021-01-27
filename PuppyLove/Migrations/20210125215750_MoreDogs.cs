@@ -7,8 +7,7 @@ namespace PuppyLove.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.InsertData(
-                table: "Dogs",
-                columns: new[] { "DogId", "Age", "Breed", "ImgUrl", "Location", "Mood", "Name", "OwnerName", "Size" },
+                table: "Dogs",                columns: new[] { "DogId", "Age", "Breed", "ImgUrl", "Location", "Mood", "Name", "OwnerName", "Size" },
                 values: new object[,]
                 {
                     { 3, 1, "Husky", "https://share.icloud.com/photos/0mxrEdflh8fSsVDXz6QaL5X-A#Oak_Hills", "Portland, OR", "Inquisitive, playful", "Fin", "Jerrod", "Small" },

@@ -101,9 +101,10 @@ namespace PuppyLove.Controllers
         {
             Random random = new Random();
             int randomDog = random.Next(_db.Dogs.ToList().Count);
-            return _db.Dogs.FirstOrDefault(entry => entry.DogId == randomDog);
-        }
+            return _db.Dogs.Skip(randomDog).FirstOrDefault();
 
+        }
     }
 }
+
 
