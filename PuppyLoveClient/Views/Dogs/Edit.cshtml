@@ -7,7 +7,7 @@
 
 <h1>Edit Info:</h1>
 
-<form action="/Dogs/Details/@(Model.DogId)" method="post">
+@* <form action="/Dogs/Details/@(Model.DogId)" method="post">
   <label for="name">Dog's Name</label>
   <input id="name" name="name" type="text" value="@(Model.Name)">
   <label for="mood">Mood</label>
@@ -23,6 +23,35 @@
 
 
   <button type="submit">Go</button>
-</form>
+</form> *@
 
 <a href="/Dogs/Details/@(Model.DogId)"><p>Return to Doggy Details</p></a>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Dogs Name")
+    @Html.EditorFor(model => model.Name, new {@required = "required"})
+    <br>
+    @Html.Label("Dogs Mood")
+    @Html.EditorFor(model => model.Mood, new {@required = "required"})
+    <br>
+    @Html.Label("Dogs Age")
+    @Html.EditorFor(model => model.Age, new {@required = "required"})
+    <br>
+    @Html.Label("Dogs Size")
+    @Html.EditorFor(model => model.Size, new {@required = "required"})
+    <br>
+    @Html.Label("Dogs Location")
+    @Html.EditorFor(model => model.Location, new {@required = "required"})
+    <br>
+    @Html.Label("Owner Name")
+    @Html.EditorFor(model => model.OwnerName, new {@required = "required"})
+    <br>
+    @Html.Label("Dogs Breed")
+    @Html.EditorFor(model => model.Breed, new {@required = "required"})
+    <br>
+    @Html.Label("Dogs Image link")
+    @Html.EditorFor(model => model.ImgUrl, new {@required = "required"})
+    <br>
+    <input type="submit" value="Save Changes" />
+}

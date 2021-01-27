@@ -33,15 +33,18 @@ namespace PuppyLoveClient.Controllers
       return View(randomDog);
     }
 
+    [Authorize]
     public IActionResult Create()
     {
       return View();
     }
 
     [HttpPost]
-    public IActionResult Create(Dog dog) // user id
+    public async Task<IActionResult> Create(Dog dog)
     {
-      // var dog.User = this.User.FindFirst(ClaimTypes.NameIdentifier)?.currentUser.Id;
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      dog.User = currentUser.Id;
       Dog.Post(dog);
       return RedirectToAction("Index", "Home");
     }
@@ -49,9 +52,10 @@ namespace PuppyLoveClient.Controllers
     public IActionResult Details(int id)
     {
       var dog = Dog.GetDetails(id);
-      return View(dog);
+      return View(dog); 
     }
-
+    
+    [Authorize]
     public IActionResult Edit(int id)
     {
       
@@ -60,21 +64,22 @@ namespace PuppyLoveClient.Controllers
     }
 
     [HttpPost]
-    public IActionResult Edit(int id, Dog dog)
+    public async Task<IActionResult> Edit(int id, Dog dog)
     {
-
-      // currentUser = asdfasdf
-      // if dog.userId == currentUser.Id
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      dog.User = currentUser.Id;
       dog.DogId = id;
       Dog.Put(dog);
-
-      // else
-      // return failed to execute
       return RedirectToAction("Details", id);
     }
 
-    public IActionResult Delete(int id)
+    [Authorize]
+    public async Task<IActionResult> Delete(int id, Dog dog)
     {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      dog.User = currentUser.Id;
       Dog.Delete(id);
       return RedirectToAction("Index");
     }
