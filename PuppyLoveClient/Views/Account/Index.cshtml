@@ -10,7 +10,7 @@
 {
   <h3>Greetings @User.Identity.Name!</h3>
   <p class="newDog" >@Html.ActionLink("Add Dog to Account", "Create", "Dogs")</p>
-  <p class="explore">@Html.ActionLink("Explore Doggos!", "Index", "Dogs")</p>
+  <p class="explore">@Html.ActionLink("Browse Dogs!", "Index", "Dogs")</p>
   @using (Html.BeginForm("LogOff", "Account"))
   {
     <input type="submit" class="btn btn-dark btn-sm" value="Log out" />
