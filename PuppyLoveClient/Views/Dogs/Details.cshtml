@@ -1,6 +1,9 @@
 @{
     ViewData["Title"] = "Details";
 }
+
+@using System.Security.Claims;
+
 <div class="card">
     <div class="container-upper">
         <div class="row choose">
@@ -16,6 +19,7 @@
         <p>Size: @Model.Size</p>
         <p>Owner: @Model.OwnerName, Location: @Model.Location</p>
         <br>
+        @* && (User.Identity.Id == @Model.User)) Specify the user who created the dog*@
         @if (User.Identity.IsAuthenticated)
         {
         <a href="/Dogs/Edit/@(Model.DogId)"><p>Edit</p></a>

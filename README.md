@@ -97,12 +97,44 @@ This application is a service to assist in setting up Puppy Playdates! Users wil
 
 ## 	📝 API Documentation
 
-Feel free to navigate through the API endpoints via Postman or another API Client and presue the CRUD functionality via the Client side views on the live server.
+Feel free to navigate through the API endpoints via Postman or another API Client and peruse the CRUD functionality via the Client side views on the live server.
 
+Certain information is available via query.
+
+Dog Path Parameters
+
+| Parameter | Type | Description |
+| :---: | :---: | --- |
+| name | string | Return matches by name
+| owner name | string | Return matches by owner name
+| mood | string | Return matches by mood
+| age | int | Return matches by age
+| size | string | Return matches by size
+| location | string | Return matches by location
+| user | string | Return matches by user
+
+
+### Accessing SwaggerUI
+
+Launch the project from the `PuppyLove` project directory by typing `dotnet run` into the terminal. Input `http://localhost:5000/swagger` to view and interact with the Swashbuckle SwaggerUI.
+<br>
+
+### Swagger UI Screenshot
+<br>
+
+<center>
+<img style="width: 50% height: 50%" src="./DogsSwaggerUI.png">
+</center>
+
+### Documentation Referenced for Swashbuckle Integration
+
+* [Microsoft Docs: Swagger Overview](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0)
+* [Microsoft Docs: Get Started with Swashbuckle](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio)
+* [GitHub Swashbuckle.AspNetCore README.md](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/README.md)
 
 ## 🐛 Known Bugs
 
-This application does not succesfully Edit yet. 
+This application does not successfully limit Edit and Delete functionality to the Dog profile creator.
 
 ## 📫 Support and contact details
 
