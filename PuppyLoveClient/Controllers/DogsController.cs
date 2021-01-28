@@ -29,8 +29,17 @@ namespace PuppyLoveClient.Controllers
 
     public IActionResult Index()
     {
-      var randomDog = Dog.GetRandom();
-      return View(randomDog);
+      try{
+          var randomDog = Dog.GetRandom();
+          return View(randomDog);
+      } catch(NullReferenceException){
+          return RedirectToAction("DogError");
+      }
+    }
+
+    public IActionResult DogError()
+    {
+      return View();
     }
 
     [Authorize]
