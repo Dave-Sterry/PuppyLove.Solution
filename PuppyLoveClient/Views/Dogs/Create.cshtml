@@ -3,37 +3,27 @@
 }
 
 @model PuppyLoveClient.Models.Dog
+<h2>Please Enter Details About Your Dog!</h2>
+<hr/>
+
 
 @using (Html.BeginForm())
 {
-    @* @Html.HiddenFor(applicationUser => applicationUser.User) *@
+    <h5>Dog Name: @Html.TextBoxFor(model => model.Name)</h5>
+    
+    <h5>Owner Name: @Html.TextBoxFor(model => model.OwnerName)</h5>
 
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
+    <h5>Dog Mood: @Html.TextBoxFor(model => model.Mood)</h5>
+
+    <h5>Dog Age: @Html.TextBoxFor(model => model.Age)</h5>
+
+    <h5>Dog Breed: @Html.TextBoxFor(model => model.Breed)</h5>
+
+    <h5>Dog Size: @Html.TextBoxFor(model => model.Size)</h5>
+
+    <h5>Location: @Html.TextBoxFor(model => model.Location)</h5>
+
+    <h5>Image URL: @Html.TextBoxFor(model => model.ImgUrl)</h5>
     <br>
-    @Html.LabelFor(model => model.OwnerName)
-    @Html.TextBoxFor(model => model.OwnerName)
-    @* <br>
-    @Html.HiddenFor(model => model.User == ApplicationUser.Id) *@
-    <br>
-    @Html.LabelFor(model => model.Mood)
-    @Html.TextBoxFor(model => model.Mood)
-    <br>
-    @Html.LabelFor(model => model.Age)
-    @Html.TextBoxFor(model => model.Age)
-    <br>
-    @Html.LabelFor(model => model.Breed)
-    @Html.TextBoxFor(model => model.Breed)
-    <br>
-    @Html.LabelFor(model => model.Size)
-    @Html.TextBoxFor(model => model.Size)
-    <br>
-    @Html.LabelFor(model => model.Location)
-    @Html.TextBoxFor(model => model.Location)
-    <br>
-    @Html.LabelFor(model => model.ImgUrl)
-    @Html.TextBoxFor(model => model.ImgUrl)
-    <br>
-    <button type="submit">Add Dog</button>
+    <button type="submit" class="btn btn-success">Add Dog</button>
 }
-@* <p>@Html.ActionLink</p> *@

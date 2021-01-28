@@ -4,7 +4,7 @@
 <div class="card">
     <div class="container-upper">
         <div class="row choose">
-            <input type="button" id="no" class="btn btn-danger" value="Back to Doggos!" onclick="location.href='@Url.Action("Index", "Dogs")'" />
+            <input type="button" id="no" class="btn" value="Back to Sniffs!" onclick="location.href='@Url.Action("Index", "Dogs")'" />
             <img class="profilePic" src = "@Url.Content(Model.ImgUrl)"  alt="Dog pic" />
             <input type="button" id="yes" class="btn btn-success" value="Add to scents!" onclick="location.href='@Url.Action("Details", "Dogs")'" />
         </div>

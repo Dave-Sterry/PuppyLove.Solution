@@ -4,20 +4,24 @@
 
 @using System.Security.Claims
 
-<h2>Authentication with Identity</h2>
+<h1>Login</h1>
 <hr />
 @if (User.Identity.IsAuthenticated)
 {
   <h3>Greetings @User.Identity.Name!</h3>
-  <p class="newDog" >@Html.ActionLink("Add Dog to Account", "Create", "Dogs")</p>
-  <p class="explore">@Html.ActionLink("Browse Dogs!", "Index", "Dogs")</p>
+  <hr/>
+  @* <p class="newDog" >@Html.ActionLink("Add Dog to Account", "Create", "Dogs")</p> *@
+  <input type="button" class="center-block btn btn-primary" value="Add Dog to account" onclick="location.href='@Url.Action("Create", "Dogs")'" /><br>
+  @* <p class="explore">@Html.ActionLink("Browse Dogs!", "Index", "Dogs")</p> *@
+  <input type="button" class="center-block btn btn-primary" value="Sniff some Butts!" onclick="location.href='@Url.Action("Index", "Dogs")'" /><br>
+
   @using (Html.BeginForm("LogOff", "Account"))
   {
-    <input type="submit" class="btn btn-dark btn-sm" value="Log out" />
+    <input type="submit" class="center-block btn btn-dark btn-sm" value="Log out" />
   }
 }
 else
 {
-  <p>@Html.ActionLink("Register", "Register")</p>
-  <p>@Html.ActionLink("Log in", "Login")</p>
+  <input type="button" class="center-block btn btn-primary" value="Login" onclick="location.href='@Url.Action("Login", "Account")'" /><br>
+  <input type="button" class="center-block btn btn-primary" value="Register" onclick="location.href='@Url.Action("Register", "Account")'" />
 }
