@@ -195,7 +195,17 @@ img.profilePic {
   margin-right: auto;
   width: 40%;
   height: auto;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
+  border: 5px solid #4DAA49;
+}
+
+img.randomPic {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: auto;
+  border-radius: 5px;
+  border: 5px solid #4DAA49;
 }
 
 div.card {
@@ -203,73 +213,74 @@ div.card {
   border: none;
 }
 
+.container-upper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .container-lower {
   background-color: rgba(255, 255, 255, 0.5);
   margin-left: auto;
   margin-right: auto;
+  width: 50%;
   padding-left: 50px;
   padding-right: 50px;
+  border-radius: 5px;
 }
 
 .container-lower p {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
 }
 
 .container-lower h1 {
   text-align: center;
-}
-
-input#no {
-  float: right;
   margin-left: auto;
-}
-
-input#yes {
-  float: left;
   margin-right: auto;
 }
 
-/* add button
--------------------------------------- */
-input.squirrel {
-  border-radius: 4px;
-  background-color: #E2E890;
-  border: none;
-  color: white;
+h3 {
   text-align: center;
-  font-size: 28px;
-  padding: 10px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input#no {
+  margin-left: auto;
+  height: 150px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #E2E890;
+  color: #007BFF;
+  border: 3px solid  #c0c574;
+  border-radius: 25px;
+}
+
+input#no:hover {
+  background-color: red;
+  color: white;
+}
+
+input#yes {
+  margin-right: auto;
+  height: 150px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #E2E890;
+  color: #007BFF;
+  border: 3px solid  #c0c574;
+  border-radius: 25px;
 }
 
 input#yes:hover {
-  background-color: red;
+  background-color: green;
+  color: white;
 }
 
-input#yes  {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-input#yes :before {
-  content: '\00ab';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: -20px;
-  transition: 0.5s;
-}
-
-input#yes:hover  {
-  padding-left: 25px;
-}
-
-input#yes:hover :before {
-  opacity: 1;
-  left: 0;
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
