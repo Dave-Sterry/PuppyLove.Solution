@@ -70,11 +70,6 @@ This application is a service to assist in setting up Puppy Playdates! Users wil
 ### Import Database using Entity Framework Core
 * Navigate to `PuppyLove.Solution/PuppyLove` and type `dotnet ef database update` into the terminal to create your database tables.
 
-### SQL Database Design
-<center>
-<img style="width: 50% height: 50%" src="./ReadMeAssets/sqlSchemaPlan.png">
-</center>
-
 ### Launch this Application
 * Navigate to `PuppyLove.Solution/PuppyLove` and type `dotnet restore` into the terminal
 * Then, in the same API project directory, type `dotnet build` into the terminal followed by `dotnet run`
@@ -82,13 +77,12 @@ This application is a service to assist in setting up Puppy Playdates! Users wil
 
 ## 	📝 API Documentation
 
-Feel free to navigate through the API endpoints via Postman or another API Client.
+Feel free to navigate through the API endpoints via Postman or another API Client and presue the CRUD functionality via the Client side views on the live server.
 
-* API List of Dogs: `http://localhost:5004/api/dogs`
 
 ## 🐛 Known Bugs
 
-This application currently does not include a Client side or API Versioning. 
+This application...
 
 ## 📫 Support and contact details
 
