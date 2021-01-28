@@ -75,7 +75,7 @@ namespace PuppyLoveClient.Controllers
       dog.User = currentUser.Id;
       dog.DogId = id;
       Dog.Put(dog);
-      return RedirectToAction("Details", id);
+      return RedirectToAction("Details", new {id = id});
     }
 
     [Authorize]

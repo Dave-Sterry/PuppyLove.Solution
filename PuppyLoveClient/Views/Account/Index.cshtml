@@ -11,7 +11,8 @@
   <h3>Greetings @User.Identity.Name!</h3>
   <hr/>
   <input type="button" class="center-block btn btn-primary" value="Add Dog to account" onclick="location.href='@Url.Action("Create", "Dogs")'" /><br>
-  <input type="button" class="center-block btn btn-primary" value="Sniff some Butts!" onclick="location.href='@Url.Action("Index", "Dogs")'" /><br>
+  <input type="button" class="center-block btn btn-primary" value="Sniff some Butts!" onclick="location.href='@Url.Action("Index", "Dogs")'" /><br>  
+  
 
   @using (Html.BeginForm("LogOff", "Account"))
   {
@@ -23,3 +24,5 @@ else
   <input type="button" class="center-block btn btn-primary" value="Login" onclick="location.href='@Url.Action("Login", "Account")'" /><br>
   <input type="button" class="center-block btn btn-primary" value="Register" onclick="location.href='@Url.Action("Register", "Account")'" />
 }
+
+
