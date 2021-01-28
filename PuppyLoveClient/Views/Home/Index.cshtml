@@ -8,12 +8,12 @@
 <div class="container">
     @if (User.Identity.IsAuthenticated)
     {
-        <p class="explore">@Html.ActionLink("Doggos!", "Index", "Dogs")</p>
+        <input type="button" class="center-block btn btn-primary" value="Sniff some Butts!" onclick="location.href='@Url.Action("Index", "Dogs")'" />
     }
     else
     {
-        <p>For complete functionality please sign in or create an account.</p>
-        <p class="newUser">@Html.ActionLink("Login", "Login", "Account")</p>
-        <p class="newUser"><span class="register">@Html.ActionLink("Register", "Register", "Account")</span></p>
+        <p style="text-align: center;">🐾 For complete functionality please sign in or create an account! 🐾</p>
+        <input type="button" class="center-block btn btn-primary" value="Login" onclick="location.href='@Url.Action("Login", "Account")'" /><br>
+        <input type="button" class="center-block btn btn-primary" value="Register" onclick="location.href='@Url.Action("Register", "Account")'" />
     }
 </div>
