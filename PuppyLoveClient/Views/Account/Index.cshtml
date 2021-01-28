@@ -10,9 +10,7 @@
 {
   <h3>Greetings @User.Identity.Name!</h3>
   <hr/>
-  @* <p class="newDog" >@Html.ActionLink("Add Dog to Account", "Create", "Dogs")</p> *@
   <input type="button" class="center-block btn btn-primary" value="Add Dog to account" onclick="location.href='@Url.Action("Create", "Dogs")'" /><br>
-  @* <p class="explore">@Html.ActionLink("Browse Dogs!", "Index", "Dogs")</p> *@
   <input type="button" class="center-block btn btn-primary" value="Sniff some Butts!" onclick="location.href='@Url.Action("Index", "Dogs")'" /><br>
 
   @using (Html.BeginForm("LogOff", "Account"))

@@ -1,25 +1,12 @@
-using System.Threading.Tasks;
 using RestSharp;
+using System.Threading.Tasks;
 
 namespace PuppyLoveClient.Models
 {
     class ApiHelper
     {
-        // public static async Task<string> GetAll()
-        // {
-        //     RestClient client = new RestClient("http://localhost:5000/api");
-        //     RestRequest request = new RestRequest($"dogs", Method.GET);
-        //     var response = await client.ExecuteTaskAsync(request);
-        //     return response.Content;
-        // }
-
         public static async Task<string> Random()
         {
-            // if (currentUser)
-            // {
-            //     userIdParam = "userId=" + currentUser.Id;
-            // }
-            // {userIdParam}
             RestClient client = new RestClient("http://localhost:5000/api");
             RestRequest request = new RestRequest($"dogs/random", Method.GET);
             var response = await client.ExecuteTaskAsync(request);

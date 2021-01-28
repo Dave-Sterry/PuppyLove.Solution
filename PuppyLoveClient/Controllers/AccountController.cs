@@ -1,10 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
-using PuppyLoveClient.Models;
-using System.Threading.Tasks;
-using PuppyLoveClient.ViewModels;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Security.Claims;
+using PuppyLoveClient.Models;
+using Microsoft.AspNetCore.Mvc;
+using PuppyLoveClient.ViewModels;
+using Microsoft.AspNetCore.Identity;
 
 namespace PuppyLoveClient.Controllers
 {
@@ -21,12 +21,9 @@ namespace PuppyLoveClient.Controllers
       _db = db;
     }
 
-    public ActionResult Index() // async <Task>
+    public ActionResult Index()
     {
-      //var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      //var currentUser = await _userManager.FindByIdAsync(userId);
-      //var userDogs = _db.Dogs.Where(entry => entry.User.Id == currentUser.Id);
-      return View(); // userDogs
+      return View();
     }
 
     public ActionResult Register()

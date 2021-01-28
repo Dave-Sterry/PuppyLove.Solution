@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using PuppyLoveClient.Models;
+using System;
 using System.Linq;
+using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using PuppyLoveClient.Models;
 
 namespace PuppyLoveClient.Controllers
 {
@@ -12,7 +12,7 @@ namespace PuppyLoveClient.Controllers
     {
         public IActionResult Index()
         {
-            return View(); // return RedirectToAction("Index", "Dogs"); assuming we want to View the splash page here
+            return View();
         }
 
         public IActionResult Privacy()

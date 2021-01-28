@@ -18,17 +18,6 @@ namespace PuppyLoveClient.Models
         public string Location { get; set; }
         public string ImgUrl { get; set; }
 
-        // public static List<Dog> GetDogs()
-        // {
-        //     var apiCallTask = ApiHelper.GetAll();
-        //     var result = apiCallTask.Result;
-
-        //     JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-        //     List<Dog> dogList = JsonConvert.DeserializeObject<List<Dog>>(jsonResponse.ToString());
-
-        //     return dogList;
-        // }
-
         public static Dog GetRandom()
         {
             var apiCallTask = ApiHelper.Random();
@@ -40,7 +29,7 @@ namespace PuppyLoveClient.Models
             return dog;
         }
 
-        public static Dog GetDetails(int id) // add int userId
+        public static Dog GetDetails(int id)
         {
             var apiCallTask = ApiHelper.Get(id);
             var result = apiCallTask.Result;

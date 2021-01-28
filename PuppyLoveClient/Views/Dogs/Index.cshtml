@@ -1,20 +1,16 @@
-@using PuppyLoveClient.Models;
 @model PuppyLoveClient.Models.Dog
 
-    <div class="container">
-        <div class="col-lg-12">
-            <div class="profilePic">
-                <img src = "@Url.Content(Model.ImgUrl)" style="height:200px;width:auto;" alt="Dog pic" />
-            </div>
-            <div class="row-intro">
-                <h3>@Model.Name, Age: @Model.Age</h3>
-            </div>
-            <div class="row-swipe">
-                <button type="button" class="squirrel"><span class="squirrel">@Html.ActionLink("Squirrel", "Index")</span></button>
-                <button type="button" class="sniff"><span class="sniff">@Html.ActionLink("Sniff", "Details", new { id = Model.DogId})</span></button>
-            </div>
-            <div class="row-bio">
-                <p class="bio">@Model.Mood</p>
-            </div>
+<div class="card">
+    <div class="container-upper">
+        <div class="row-swipe">
+            <button type="button" class="squirrel"><span class="squirrel">@Html.ActionLink("Squirrel", "Index")</span></button>
+            <img class="randomPic" src = "@Url.Content(Model.ImgUrl)" style="height:250px;width:auto;" alt="Dog pic" />
+            <button type="button" class="sniff"><span class="sniff">@Html.ActionLink("Sniff", "Details", new { id = Model.DogId})</span></button>
         </div>
     </div>
+    <div class="container-lower">
+        <h3>@Model.Name, Age: @Model.Age</h3>
+        <p class="bio">@Model.Mood</p>
+    </div>
+</div>
+

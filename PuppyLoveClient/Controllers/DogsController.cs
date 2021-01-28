@@ -1,23 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using PuppyLoveClient.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+using System;
+using System.Linq;
+using System.Diagnostics;
 using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PuppyLoveClient.Controllers
 {
   public class DogsController : Controller
   {
-    // public IActionResult Index()
-    // {
-    //   var allDogs = Dog.GetDogs();
-    //   return View(allDogs);
-    // }
 
     private readonly PuppyLoveClientContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
